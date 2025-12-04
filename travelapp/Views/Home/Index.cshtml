@@ -1,0 +1,46 @@
+﻿@{
+    ViewBag.Title = "Home";
+}
+
+<!-- Hero horizontal container: right image slides in on load, text appears after image -->
+<section class="hero-section my-4">
+    <div class="row align-items-center hero-row">
+        <div class="col-md-6 hero-text">
+            <h2 class="hero-heading" class="section-title" >Welcome to Türkiye</h2>
+            <p class="section-text">Join our curated tours across Ankara, İstanbul, Antalya, İzmir and Aydın. Explore unique cuisine, rich culture and unforgettable landscapes.</p>
+            <a class="btn btn-primary" asp-controller="Cities" asp-action="Index">Explore Cities</a>
+        </div>
+
+        <div class="col-md-6 hero-image-wrap">
+            <img src="~/img/right1.jpeg" alt="Scenic view" class="section-img" />
+        </div>
+    </div>
+</section>
+
+<!-- Second horizontal container: image on left appears on scroll -->
+<section class="feature-section my-5">
+    <div class="row align-items-center feature-row">
+        <div class="col-md-6">
+            <img src="~/img/left1.jpg" alt="Culinary tour" class="section-img" />
+        </div>
+        <div class="col-md-6 feature-text">
+            <h3>Discover Local Flavors</h3>
+            <p class="section-text">From savory kebabs and mezes to sweet baklava — taste the local dishes as our local guides take you through hidden gems of each city.</p>
+            <a class="btn btn-outline-primary" asp-controller="Events" asp-action="Index">See Food Events</a>
+        </div>
+    </div>
+</section>
+
+<!-- Third horizontal container: image on right appears on scroll -->
+<section class="feature-section my-5">
+    <div class="row align-items-center feature-row">
+        <div class="col-md-6 feature-text">
+            <h3>Explore Culture & Heritage</h3>
+            <p class="section-text" >Visit ancient ruins, museums and vibrant neighborhoods. Our tours highlight the stories behind every place to give deeper cultural context.</p>
+            <a class="btn btn-outline-primary" asp-controller="Cities" asp-action="Index">Book a Tour</a>
+        </div>
+        <div class="col-md-6">
+            <img src="~/img/right2.jpeg" alt="Architecture" class="section-img" />
+        </div>
+    </div>
+</section>

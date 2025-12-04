@@ -1,0 +1,171 @@
+/* Basic resets */
+body {
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    background: #f8f9fa;
+    color: #222;
+}
+
+
+
+/* Panorama strip under navbar */
+.site-header .panorama-strip {
+    background-image: url('/images/istanbul-panorama.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 220px;
+    display: flex;
+    align-items: center;
+    color: white;
+    position: relative;
+}
+.panorama-overlay {
+    background: rgba(0,0,0,0.35);
+    padding: 20px;
+    border-radius: 8px;
+}
+.panorama-title {
+    margin: 0;
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+/* HERO section layout */
+.hero-section .hero-row {
+    background: white;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+    overflow: hidden;
+}
+.hero-text { opacity: 0; transform: translateX(-20px); transition: all 800ms ease-out; }
+.hero-image-wrap { text-align: center; }
+.hero-image {
+    max-width: 100%;
+    border-radius: 8px;
+    transform: translateX(40px);
+    opacity: 0;
+    transition: transform 900ms ease-out, opacity 900ms ease-out;
+}
+
+/* Feature sections */
+.feature-section .feature-row {
+    background: white;
+    border-radius: 8px;
+    padding: 28px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+    overflow: hidden;
+}
+.feature-image {
+    max-width: 100%;
+    border-radius: 8px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: transform 700ms ease-out, opacity 700ms ease-out;
+}
+.feature-text { opacity: 0; transform: translateX(20px); transition: all 700ms ease-out; }
+
+/* Reveal classes (JS will add 'visible') */
+.reveal-right-onload.visible,
+.reveal-on-scroll-right.visible,
+.reveal-on-scroll-left.visible {
+    opacity: 1;
+    transform: translateX(0) translateY(0);
+}
+.hero-image.reveal-right-onload.visible {
+    transform: translateX(0);
+}
+.hero-text.visible, .feature-text.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Slight delay to show text after image load */
+.hero-text.visible { transition-delay: 300ms; }
+
+/* Responsive tweaks */
+@media (max-width: 767px) {
+    .site-header .panorama-strip { height: 140px; }
+    .panorama-title { font-size: 1.2rem; }
+    .hero-row, .feature-row { padding: 18px; }
+    .hero-image { margin-top: 12px; }
+}
+/* NAVBAR BACKGROUND IMAGE */
+.custom-navbar {
+    background-image: url('/images/istanbul-banner.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 140px; /* Şerit yüksekliği */
+    display: flex;
+    align-items: center;
+    color: white !important;
+}
+
+/* Logo Boyutu */
+.nav-logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 6px;
+    object-fit: cover;
+}
+
+/* Navbar yazıları resmin üzerinde görünür yapılsın */
+.navbar-nav .nav-link {
+    color: white !important;
+    font-weight: 600;
+    font-size: 18px;
+    text-shadow: 1px 1px 3px #000;
+}
+
+.navbar-brand {
+    font-size: 28px;
+    font-weight: 700;
+    color: white !important;
+    text-shadow: 1px 1px 3px #000;
+}
+
+/* margin kaldır */
+body {
+    padding-top: 0 !important;
+}
+/* NAVBAR BANNER BACKGROUND */
+.navbar-banner {
+    background-image: url('/img/navbarresmi.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 160px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+    border-bottom: 3px solid rgba(255,255,255,0.4);
+}
+
+/* Navbar text readable */
+.navbar-banner .nav-link,
+.navbar-banner .navbar-brand {
+    font-weight: 600;
+    color: white !important;
+    text-shadow: 1px 1px 3px #000;
+}
+
+
+.section-img {
+    width: 380px;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+/* Headings */
+.section-title {
+    font-size: 34px;
+    font-weight: 700;
+    color: #1e1e1e;
+    margin-bottom: 15px;
+}
+
+/* Paragraph text */
+.section-text {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #4c4c4c;
+}
