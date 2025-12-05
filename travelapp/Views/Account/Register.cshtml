@@ -1,0 +1,27 @@
+@model travelapp.Models.AppUser
+
+<h2>Register</h2>
+
+<form method="post">
+    <div class="mb-3">
+        <label>First Name</label>
+        <input class="form-control" asp-for="FirstName" />
+    </div>
+
+    <div class="mb-3">
+        <label>Last Name</label>
+        <input class="form-control" asp-for="LastName" />
+    </div>
+
+    <div class="mb-3">
+        <label>Email</label>
+        <input class="form-control" asp-for="Email" />
+    </div>
+
+    <div class="mb-3">
+        <label>Password</label>
+        <input type="password" class="form-control" name="password" />
+    </div>
+
+    <button class="btn btn-success">Register</button>
+</form>

@@ -11,24 +11,54 @@
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark navbar-banner">
-    <div class="container">
-        <a class="navbar-brand fs-3 fw-bold text-white" href="/">Explore Turkey</a>
+        <div class="container">
+            <a class="navbar-brand fs-3 fw-bold text-white" href="/">Explore Turkey</a>
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-        <div class="collapse navbar-collapse justify-content-end" id="navMenu">
-            <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link text-white fs-5" href="/">Home</a></li>
-                <li class="nav-item"><a class="nav-link text-white fs-5" href="/Event">Events</a></li>
-                <li class="nav-item"><a class="nav-link text-white fs-5" href="/City">Cities</a></li>
-            </ul>
+            <div class="collapse navbar-collapse justify-content-end" id="navMenu">
+                <ul class="navbar-nav">
+
+                    <li class="nav-item">
+                        <a class="nav-link text-white fs-5" href="/">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-white fs-5" asp-controller="Event" asp-action="Index">Events</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-white fs-5" href="/City">Cities</a>
+                    </li>
+
+                    <!-- LOGIN / REGISTER / LOGOUT -->
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li class="nav-item">
+                            <span class="nav-link text-warning">Hello, @User.Identity.Name!</span>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-danger" asp-controller="Account" asp-action="Logout">Logout</a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link text-white" asp-controller="Account" asp-action="Login">Login</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-white" asp-controller="Account" asp-action="Register">Register</a>
+                        </li>
+                    }
+
+                </ul>
+            </div>
         </div>
-    </div>
-</nav>
-
-
+    </nav>
 
     <!-- Panorama strip under navbar -->
     <div class="panorama-strip">
@@ -36,7 +66,6 @@
             <h1 class="panorama-title">Discover Türkiye — From Istanbul to Antalya</h1>
         </div>
     </div>
-    </header>
 
     <main role="main" class="pb-5">
         <div class="container mt-4">
@@ -51,5 +80,4 @@
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js"></script>
 </body>
-
 </html>

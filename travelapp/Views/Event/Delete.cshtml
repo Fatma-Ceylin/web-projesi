@@ -1,0 +1,13 @@
+@model travelapp.Models.Event
+
+<h2>Delete Event</h2>
+
+<p><strong>Are you sure you want to delete this event?</strong></p>
+
+<p>Name: @Model.Name</p>
+<p>City: @Model.City</p>
+
+<form method="post">
+    <button class="btn btn-danger">Delete</button>
+    <a class="btn btn-secondary" href="/Event">Cancel</a>
+</form>

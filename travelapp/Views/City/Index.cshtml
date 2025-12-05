@@ -1,4 +1,28 @@
-@model City
+@model List<travelapp.Models.City>
 
-<p>City Plate Code: @Model.plateCode</p>
-<p>City Name: @Model.name</p>
+<h2>Cities</h2>
+
+<a class="btn btn-primary mb-3" href="/City/Create">Add City</a>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Plate Code</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.plateCode</td>
+            <td>@item.name</td>
+            <td>@item.Description</td>
+            <td>
+                <a class="btn btn-info btn-sm" href="/City/Details/@item.Id">Details</a>
+                <a class="btn btn-warning btn-sm" href="/City/Edit/@item.Id">Edit</a>
+                <a class="btn btn-danger btn-sm" href="/City/Delete/@item.Id">Delete</a>
+            </td>
+        </tr>
+    }
+</table>

@@ -1,0 +1,11 @@
+@model travelapp.Models.Event
+
+<h2>Event Details</h2>
+
+<p><strong>Name:</strong> @Model.Name</p>
+<p><strong>City:</strong> @Model.City</p>
+<p><strong>Description:</strong> @Model.Description</p>
+<p><strong>Date:</strong> @Model.Date.ToShortDateString()</p>
+
+<br />
+<a class="btn btn-secondary" href="/Event">Back</a>

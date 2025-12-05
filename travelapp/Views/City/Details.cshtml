@@ -1,0 +1,15 @@
+@model travelapp.Models.City
+
+<h2>City Details</h2>
+
+<p><strong>Plate Code:</strong> @Model.plateCode</p>
+<p><strong>Name:</strong> @Model.name</p>
+<p><strong>Description:</strong> @Model.Description</p>
+
+@if (!string.IsNullOrEmpty(Model.ImageUrl))
+{
+    <img src="@Model.ImageUrl" width="300" />
+}
+
+<br /><br />
+<a class="btn btn-secondary" href="/City">Back</a>

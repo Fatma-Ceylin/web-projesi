@@ -1,0 +1,29 @@
+@model travelapp.Models.City
+
+<h2>Edit City</h2>
+
+<form method="post">
+    <input type="hidden" asp-for="Id" />
+
+    <div class="mb-3">
+        <label>Plate Code</label>
+        <input class="form-control" asp-for="plateCode" />
+    </div>
+
+    <div class="mb-3">
+        <label>Name</label>
+        <input class="form-control" asp-for="name" />
+    </div>
+
+    <div class="mb-3">
+        <label>Description</label>
+        <textarea class="form-control" asp-for="Description"></textarea>
+    </div>
+
+    <div class="mb-3">
+        <label>Image URL</label>
+        <input class="form-control" asp-for="ImageUrl" />
+    </div>
+
+    <button class="btn btn-warning">Save</button>
+</form>

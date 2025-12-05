@@ -1,0 +1,30 @@
+@model travelapp.Models.Event
+
+<h2>Edit Event</h2>
+
+<form method="post">
+
+    <input type="hidden" asp-for="Id" />
+
+    <div class="mb-3">
+        <label>Name</label>
+        <input class="form-control" asp-for="Name" />
+    </div>
+
+    <div class="mb-3">
+        <label>City</label>
+        <select class="form-control" asp-for="City" asp-items="ViewBag.Cities"></select>
+    </div>
+
+    <div class="mb-3">
+        <label>Description</label>
+        <textarea class="form-control" asp-for="Description"></textarea>
+    </div>
+
+    <div class="mb-3">
+        <label>Date</label>
+        <input type="date" class="form-control" asp-for="Date" />
+    </div>
+
+    <button class="btn btn-warning">Save</button>
+</form>
