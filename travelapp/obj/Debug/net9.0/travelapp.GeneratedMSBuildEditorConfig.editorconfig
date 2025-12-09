@@ -17,89 +17,89 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = travelapp
 build_property.RootNamespace = travelapp
-build_property.ProjectDir = C:\Users\fatma\Desktop\3. Sınıf\1. Semester\Lessonsof2\Web\travelguide\travelapp\
+build_property.ProjectDir = C:\Users\LENOVO\web-projesi\travelapp\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 9.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\fatma\Desktop\3. Sınıf\1. Semester\Lessonsof2\Web\travelguide\travelapp
+build_property.MSBuildProjectDirectory = C:\Users\LENOVO\web-projesi\travelapp
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 9.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/fatma/Desktop/3. Sınıf/1. Semester/Lessonsof2/Web/travelguide/travelapp/Views/Account/Login.cshtml]
+[C:/Users/LENOVO/web-projesi/travelapp/Views/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/fatma/Desktop/3. Sınıf/1. Semester/Lessonsof2/Web/travelguide/travelapp/Views/Account/Register.cshtml]
+[C:/Users/LENOVO/web-projesi/travelapp/Views/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/fatma/Desktop/3. Sınıf/1. Semester/Lessonsof2/Web/travelguide/travelapp/Views/City/Create.cshtml]
+[C:/Users/LENOVO/web-projesi/travelapp/Views/City/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2l0eVxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/fatma/Desktop/3. Sınıf/1. Semester/Lessonsof2/Web/travelguide/travelapp/Views/City/Delete.cshtml]
+[C:/Users/LENOVO/web-projesi/travelapp/Views/City/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2l0eVxEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/fatma/Desktop/3. Sınıf/1. Semester/Lessonsof2/Web/travelguide/travelapp/Views/City/Details.cshtml]
+[C:/Users/LENOVO/web-projesi/travelapp/Views/City/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2l0eVxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/fatma/Desktop/3. Sınıf/1. Semester/Lessonsof2/Web/travelguide/travelapp/Views/City/Edit.cshtml]
+[C:/Users/LENOVO/web-projesi/travelapp/Views/City/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2l0eVxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/fatma/Desktop/3. Sınıf/1. Semester/Lessonsof2/Web/travelguide/travelapp/Views/City/Index.cshtml]
+[C:/Users/LENOVO/web-projesi/travelapp/Views/City/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2l0eVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/fatma/Desktop/3. Sınıf/1. Semester/Lessonsof2/Web/travelguide/travelapp/Views/Event/Create.cshtml]
+[C:/Users/LENOVO/web-projesi/travelapp/Views/Event/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/fatma/Desktop/3. Sınıf/1. Semester/Lessonsof2/Web/travelguide/travelapp/Views/Event/Delete.cshtml]
+[C:/Users/LENOVO/web-projesi/travelapp/Views/Event/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/fatma/Desktop/3. Sınıf/1. Semester/Lessonsof2/Web/travelguide/travelapp/Views/Event/Details.cshtml]
+[C:/Users/LENOVO/web-projesi/travelapp/Views/Event/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/fatma/Desktop/3. Sınıf/1. Semester/Lessonsof2/Web/travelguide/travelapp/Views/Event/Edit.cshtml]
+[C:/Users/LENOVO/web-projesi/travelapp/Views/Event/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/fatma/Desktop/3. Sınıf/1. Semester/Lessonsof2/Web/travelguide/travelapp/Views/Event/Index.cshtml]
+[C:/Users/LENOVO/web-projesi/travelapp/Views/Event/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/fatma/Desktop/3. Sınıf/1. Semester/Lessonsof2/Web/travelguide/travelapp/Views/Home/About.cshtml]
+[C:/Users/LENOVO/web-projesi/travelapp/Views/Home/About.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBYm91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/fatma/Desktop/3. Sınıf/1. Semester/Lessonsof2/Web/travelguide/travelapp/Views/Home/Index.cshtml]
+[C:/Users/LENOVO/web-projesi/travelapp/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/fatma/Desktop/3. Sınıf/1. Semester/Lessonsof2/Web/travelguide/travelapp/Views/Shared/Error.cshtml]
+[C:/Users/LENOVO/web-projesi/travelapp/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/fatma/Desktop/3. Sınıf/1. Semester/Lessonsof2/Web/travelguide/travelapp/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/LENOVO/web-projesi/travelapp/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/fatma/Desktop/3. Sınıf/1. Semester/Lessonsof2/Web/travelguide/travelapp/Views/_ViewImports.cshtml]
+[C:/Users/LENOVO/web-projesi/travelapp/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/fatma/Desktop/3. Sınıf/1. Semester/Lessonsof2/Web/travelguide/travelapp/Views/_ViewStart.cshtml]
+[C:/Users/LENOVO/web-projesi/travelapp/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/fatma/Desktop/3. Sınıf/1. Semester/Lessonsof2/Web/travelguide/travelapp/Views/Shared/_Layout.cshtml]
+[C:/Users/LENOVO/web-projesi/travelapp/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-es1i68pb6z

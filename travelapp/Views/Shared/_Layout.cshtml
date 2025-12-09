@@ -33,7 +33,12 @@
                         <a class="nav-link text-white fs-5" href="/City">Cities</a>
                     </li>
 
-                    <!-- LOGIN / REGISTER / LOGOUT -->
+                    <li class="nav-item">
+                       <a class="nav-link text-white fs-5" asp-controller="Home" asp-action="About">About</a>
+                    </li>
+
+
+                    
                     @if (User.Identity.IsAuthenticated)
                     {
                         <li class="nav-item">
@@ -60,10 +65,10 @@
         </div>
     </nav>
 
-    <!-- Panorama strip under navbar -->
+    
     <div class="panorama-strip">
         <div class="panorama-overlay container">
-            <h1 class="panorama-title">Discover Türkiye — From Istanbul to Antalya</h1>
+            <h1 class="panorama-title">Welcome to Your Travel Guide!</h1>
         </div>
     </div>
 
