@@ -1,32 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\fatma\\Desktop\\3. Sınıf\\1. Semester\\Lessonsof2\\Web\\travelguide\\travelapp\\travelapp.csproj": {}
+    "/Users/bercemkarakoyun/Desktop/web-projesi-1/travelapp/travelapp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\fatma\\Desktop\\3. Sınıf\\1. Semester\\Lessonsof2\\Web\\travelguide\\travelapp\\travelapp.csproj": {
+    "/Users/bercemkarakoyun/Desktop/web-projesi-1/travelapp/travelapp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\fatma\\Desktop\\3. Sınıf\\1. Semester\\Lessonsof2\\Web\\travelguide\\travelapp\\travelapp.csproj",
+        "projectUniqueName": "/Users/bercemkarakoyun/Desktop/web-projesi-1/travelapp/travelapp.csproj",
         "projectName": "travelapp",
-        "projectPath": "C:\\Users\\fatma\\Desktop\\3. Sınıf\\1. Semester\\Lessonsof2\\Web\\travelguide\\travelapp\\travelapp.csproj",
-        "packagesPath": "C:\\Users\\fatma\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\fatma\\Desktop\\3. Sınıf\\1. Semester\\Lessonsof2\\Web\\travelguide\\travelapp\\obj\\",
+        "projectPath": "/Users/bercemkarakoyun/Desktop/web-projesi-1/travelapp/travelapp.csproj",
+        "packagesPath": "/Users/bercemkarakoyun/.nuget/packages/",
+        "outputPath": "/Users/bercemkarakoyun/Desktop/web-projesi-1/travelapp/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\fatma\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/bercemkarakoyun/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -45,7 +38,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "10.0.100"
       },
       "frameworks": {
         "net9.0": {
@@ -85,6 +78,20 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[9.0.11, 9.0.11]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.osx-arm64",
+              "version": "[9.0.11, 9.0.11]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[9.0.11, 9.0.11]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -93,7 +100,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/10.0.100/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
