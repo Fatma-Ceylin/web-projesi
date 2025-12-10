@@ -4,6 +4,8 @@ using travelapp.Models;
 
 namespace travelapp.Controllers
 {
+
+  
     public class CityController : Controller
     {
         private readonly ApplicationDBContext _context;

@@ -1,5 +1,13 @@
 @model travelapp.Models.AppUser
 
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["SuccessMessage"]
+    </div>
+}
+
+
 <h2>Register</h2>
 
 <form method="post">
