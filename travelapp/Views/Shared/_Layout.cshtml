@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Identity
+@using travelapp.Models
+@inject UserManager<AppUser> UserManager
+
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -33,34 +37,37 @@
                         <a class="nav-link text-white fs-5" href="/City">Cities</a>
                     </li>
 
-                    <!-- LOGIN / REGISTER / LOGOUT -->
-                    @if (User.Identity.IsAuthenticated)
-                    {
-                        <li class="nav-item">
-                            <span class="nav-link text-warning">Hello, @User.Identity.Name!</span>
-                        </li>
+                    
+@if (User?.Identity != null && User.Identity.IsAuthenticated)
+{
+    var currentUser = await UserManager.GetUserAsync(User);
 
-                        <li class="nav-item">
-                            <a class="nav-link text-danger" asp-controller="Account" asp-action="Logout">Logout</a>
-                        </li>
-                    }
-                    else
-                    {
-                        <li class="nav-item">
-                            <a class="nav-link text-white" asp-controller="Account" asp-action="Login">Login</a>
-                        </li>
+    <li class="nav-item">
+        <span class="nav-link text-warning">
+            Hello, @(currentUser?.FirstName ?? "User")!
+        </span>
+    </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link text-white" asp-controller="Account" asp-action="Register">Register</a>
-                        </li>
-                    }
+    <li class="nav-item">
+        <a class="nav-link text-danger" asp-controller="Account" asp-action="Logout">Logout</a>
+    </li>
+}
+else
+{
+    <li class="nav-item">
+        <a class="nav-link text-white" asp-controller="Account" asp-action="Login">Login</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link text-white" asp-controller="Account" asp-action="Register">Register</a>
+    </li>
+}
 
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Panorama strip under navbar -->
+    
     <div class="panorama-strip">
         <div class="panorama-overlay container">
             <h1 class="panorama-title">Discover Türkiye — From Istanbul to Antalya</h1>
