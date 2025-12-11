@@ -1,0 +1,29 @@
+﻿@model IEnumerable<travelapp.Models.City>
+<style>
+    .img-size {
+        width: 150%;
+        height: 350px;
+        object-fit: cover;
+    }
+</style>
+
+
+
+<div class="row">
+    @foreach (var city in Model)
+    {
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm">
+                <div class="card-body text-center">
+                    <img src="@city.CityUrl" class="img-size img-fluid" />
+                    <h5 class="card-title">@city.Name</h5>
+
+                   
+                    <a asp-controller="City" asp-action="Details" asp-route-id="@city.CityId" class="btn btn-primary">Explore</a>
+
+
+                </div>
+            </div>
+        </div>
+    }
+</div>

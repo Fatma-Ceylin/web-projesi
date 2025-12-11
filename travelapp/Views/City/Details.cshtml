@@ -1,0 +1,113 @@
+﻿@model List<travelapp.Models.Place>
+
+<style>
+        .img-size {
+                width: 150%;
+                height: 350px;
+                object-fit: cover;
+
+    }
+
+        .scroll {
+                display: flex;
+                gap: 8px;
+                overflow-x: auto;
+                padding-bottom: 6px;
+
+    }
+
+        .comment-box {
+                flex: 0 0 auto;
+                padding: 6px 10px;
+                border: 1px solid #ddd;
+                border-radius: 8px;
+                background: #f9f9f9;
+                white-space: nowrap;
+
+    }
+
+        .rate {
+                font-weight: bold;
+                color: #0d6efd;
+
+    }
+
+        p {
+                font-family: "Times New Roman";
+
+    }
+</style>
+<div class="row">
+    @foreach (var p in Model)
+    {
+
+
+
+        double avg = 0;
+
+
+        if (p.Feedbacks != null && p.Feedbacks.Count > 0)
+        {
+
+            double total = 0;
+
+            foreach (var f in p.Feedbacks)
+            {
+                total += f.Rating;
+            }
+
+            avg = total / p.Feedbacks.Count;
+        }
+
+        int rounded = (int)Math.Round(avg);
+
+
+
+
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm">
+                <div class="card-body text-center">
+                    <img src="@p.ImageUrl" class="img-size img-fluid" />
+                    <h5 class="card-title">@p.Name</h5>
+
+                    <div class="rating mb-2">
+                        @for (int i = 1; i <= 5; i++)
+                        {
+                            if (i <= rounded)
+                            {
+                                <span class="text-warning">&#9733;</span>
+                            }
+                            else
+                            {
+                                <span class="text-muted">&#9734;</span>
+                            }
+                        }
+                        <small>(@avg.ToString("0.0") / 5)</small>
+                    </div>
+
+
+                    <div class="scroll">
+                       
+                        @foreach (var f in p.Feedbacks)
+                        {
+                            <div class="comment-box">
+                                <span class="rate">@f.Rating/5</span>
+                                <span>@f.Comment</span>
+                            </div>
+                        }
+                    </div>
+
+                    <a class="btn btn-primary btn-sm"
+                       href="/Feedback/FeedBack/@p.PlaceId">
+                        Add Feedback
+                    </a>
+
+
+                </div>
+            </div>
+        </div>
+
+
+    }
+
+</div>

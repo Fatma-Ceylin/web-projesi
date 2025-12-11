@@ -1,0 +1,68 @@
+﻿@model travelapp.Models.Place
+
+<style>
+    .yellow-star {
+        color: yellow;
+        font-size: 20px;
+    }
+</style>
+
+<div class="col-md-6 offset-md-3 mt-4">
+    <div class="card shadow-sm">
+        <div class="card-body text-center">
+
+            <h4>@Model.Name için Feedback Ekle</h4>
+            <hr />
+
+            <form asp-controller="Feedback" asp-action="FeedBack" method="post">
+
+                <!-- Place Id gizli -->
+                <input type="hidden" name="placeId" value="@Model.PlaceId" />
+
+                <!-- Yorum -->
+                <label for="Comment">Comment:</label>
+                <input type="text" id="Comment" name="comment"
+                       class="form-control"
+                       style="height: 40px;" />
+                <br />
+
+                <!-- Rating -->
+                <label>Rate:</label><br />
+
+                <div class="d-flex flex-column align-items-center">
+
+                    <label>
+                        <input type="radio" name="rating" value="1" />
+                        <span class="yellow-star">★</span>
+                    </label>
+
+                    <label>
+                        <input type="radio" name="rating" value="2" />
+                        <span class="yellow-star">★★</span>
+                    </label>
+
+                    <label>
+                        <input type="radio" name="rating" value="3" />
+                        <span class="yellow-star">★★★</span>
+                    </label>
+
+                    <label>
+                        <input type="radio" name="rating" value="4" />
+                        <span class="yellow-star">★★★★</span>
+                    </label>
+
+                    <label>
+                        <input type="radio" name="rating" value="5" />
+                        <span class="yellow-star">★★★★★</span>
+                    </label>
+
+                </div>
+
+                <br />
+                <button type="submit" class="btn btn-primary btn-sm">
+                    Send
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
