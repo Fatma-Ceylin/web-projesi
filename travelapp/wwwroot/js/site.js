@@ -43,3 +43,40 @@ document.addEventListener("DOMContentLoaded", function () {
         observer.observe(el);
     });
 });
+
+
+
+// site.js dosyanıza ekleyin
+$(document).ready(function() {
+    const $stars = $('.rating-stars .star');
+    const $ratingInput = $('#RatingValue');
+
+    // Hover Efekti
+    $stars.on('mouseenter', function() {
+        const index = $(this).data('index'); 
+        $stars.removeClass('hover');
+        $stars.each(function() {
+            if ($(this).data('index') <= index) {
+                $(this).addClass('hover');
+            }
+        });
+    }).on('mouseleave', function() {
+        $stars.removeClass('hover');
+    });
+
+    // Tıklama Olayı
+    $stars.on('click', function() {
+        const index = $(this).data('index'); 
+        const rating = index + 1; 
+        
+        $ratingInput.val(rating); // Değeri gizli inputa atar
+
+        $stars.removeClass('selected');
+        
+        $stars.each(function() {
+            if ($(this).data('index') <= index) {
+                $(this).addClass('selected');
+            }
+        });
+    });
+});

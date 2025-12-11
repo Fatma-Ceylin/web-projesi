@@ -1,49 +1,65 @@
-@model List<travelapp.Models.City>
+﻿@model List<travelapp.Models.City>
 
-<h2>Cities</h2>
+<style>
+    .img-size {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+</style>
+
+<h2 class="mb-4">Cities</h2>
 
 @if (User.IsInRole("Admin"))
 {
     <a class="btn btn-primary mb-3" asp-action="Create">Add City</a>
 }
 
-<table class="table table-bordered">
-    <thead>
-        <tr>
-            <th>Plate Code</th>
-            <th>Name</th>
-            <th>Description</th>
-            <th>Actions</th>
-        </tr>
-    </thead>
+<div class="row">
+    @foreach (var city in Model)
+    {
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm h-100">
+                <div class="card-body text-center">
 
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>@item.plateCode</td>
-                <td>@item.name</td>
-                <td>@item.Description</td>
+                    @if (!string.IsNullOrEmpty(city.ImageUrl))
+                    {
+                        <img src="@city.ImageUrl" class="img-size img-fluid" />
+                    }
+                    else
+                    {
+                        <img src="/img/default-city.jpg" class="img-size img-fluid" />
+                    }
 
-                <td>
-                    <!-- Everyone can see Details -->
-                    <a class="btn btn-info btn-sm" asp-action="Details" asp-route-id="@item.Id">
+                    <h5 class="card-title mt-3">@city.name</h5>
+
+                    <p><strong>Plate Code:</strong> @city.plateCode</p>
+
+                    @if (!string.IsNullOrEmpty(city.Description))
+                    {
+                        <p>@city.Description</p>
+                    }
+
+                    <a class="btn btn-info btn-sm mb-2" asp-action="Details" asp-route-id="@city.Id">
                         Details
                     </a>
 
-                    <!-- Only ADMIN sees Edit/Delete -->
                     @if (User.IsInRole("Admin"))
                     {
-                        <a class="btn btn-warning btn-sm" asp-action="Edit" asp-route-id="@item.Id">
-                            Edit
-                        </a>
+                        <div class="mt-2 d-flex justify-content-center">
+                            <a class="btn btn-warning btn-sm mx-1" asp-action="Edit" asp-route-id="@city.Id">
+                                Edit
+                            </a>
 
-                        <a class="btn btn-danger btn-sm" asp-action="Delete" asp-route-id="@item.Id">
-                            Delete
-                        </a>
+                            <a class="btn btn-danger btn-sm mx-1" asp-action="Delete" asp-route-id="@city.Id">
+                                Delete
+                            </a>
+                        </div>
                     }
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
+
+                </div>
+            </div>
+        </div>
+    }
+</div>

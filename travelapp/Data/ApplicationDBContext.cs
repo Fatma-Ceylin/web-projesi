@@ -10,9 +10,9 @@ namespace travelapp.Data
             : base(options)
         {
         }
-
-        // TABLOLAR
         public DbSet<Event> Events { get; set; }
         public DbSet<City> Cities { get; set; }
+        public DbSet<Place> Places { get; set; }    
+        public DbSet<Feedback> Feedbacks { get; set; }
     }
 }

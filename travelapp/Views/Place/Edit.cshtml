@@ -1,0 +1,20 @@
+@model travelapp.Models.Place
+
+<h2>Edit Place</h2>
+
+<form asp-action="Edit" method="post">
+
+    <input type="hidden" asp-for="PlaceId" />
+
+    <label>Name</label>
+    <input class="form-control" asp-for="Name" />
+
+    <label>Description</label>
+    <input class="form-control" asp-for="Description" />
+
+
+    <label>City Id</label>
+    <input class="form-control" asp-for="CityId" />
+
+    <button type="submit" class="btn btn-success mt-3">Update</button>
+</form>

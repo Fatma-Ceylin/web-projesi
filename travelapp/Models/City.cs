@@ -14,5 +14,6 @@ namespace travelapp.Models
         public string? Description { get; set; }
 
         public string? ImageUrl { get; set; }
+        public List<Place> Places { get; set; } = new List<Place>();
     }
 }

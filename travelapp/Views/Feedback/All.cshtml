@@ -1,0 +1,52 @@
+@model IEnumerable<travelapp.Models.Feedback>
+
+@{
+    var placeId = ViewData["PlaceId"];
+    var placeName = ViewData["PlaceName"];
+    ViewData["Title"] = $"Feedbacks for {placeName}";
+}
+
+<h2>Feedbacks for @placeName</h2>
+
+<hr/>
+
+<a asp-controller="Feedback" 
+   asp-action="Create" 
+   asp-route-placeId="@placeId" 
+   class="btn btn-primary mb-3">
+    + Add Feedback
+</a>
+
+@if (Model == null || !Model.Any())
+{
+    <p>No feedbacks yet. Be the first to add one!</p>
+}
+else
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>User</th>
+                <th>Rating</th>
+                <th>Comment</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var feedback in Model)
+            {
+                <tr>
+                    <td>@feedback.UserName</td>
+                    <td>@feedback.Rating stars</td>
+                    <td>@feedback.Comment</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+<a asp-controller="Place" 
+   asp-action="Details" 
+   asp-route-id="@placeId" 
+   class="btn btn-secondary mt-3">
+    Back to Place Details
+</a>

@@ -16,14 +16,14 @@ namespace travelapp.Controllers
             _context = context;
         }
 
-        // LIST
+      
         public IActionResult Index()
         {
             var events = _context.Events.ToList();
             return View(events);
         }
 
-        // DETAILS
+      
         public IActionResult Details(int id)
         {
             var evt = _context.Events.FirstOrDefault(e => e.Id == id);
@@ -31,7 +31,7 @@ namespace travelapp.Controllers
             return View(evt);
         }
 
-        // CREATE (GET)
+      
         [Authorize(Roles = "Admin")]
 
         public IActionResult Create()
@@ -40,7 +40,7 @@ namespace travelapp.Controllers
             return View();
         }
 
-        // CREATE (POST)
+        
         [Authorize(Roles = "Admin")]
 
         [HttpPost]
@@ -56,7 +56,6 @@ namespace travelapp.Controllers
             return View(evt);
         }
 
-        // EDIT (GET)
         [Authorize(Roles = "Admin")]
 
         public IActionResult Edit(int id)
@@ -68,7 +67,7 @@ namespace travelapp.Controllers
             return View(evt);
         }
 
-        // EDIT (POST)
+    
         [Authorize(Roles = "Admin")]
 
         [HttpPost]
@@ -85,7 +84,7 @@ namespace travelapp.Controllers
             return View(evt);
         }
 
-        // DELETE (GET)
+      
         [Authorize(Roles = "Admin")]
 
         public IActionResult Delete(int id)
@@ -96,7 +95,7 @@ namespace travelapp.Controllers
             return View(evt);
         }
 
-        // DELETE (POST)
+      
         [Authorize(Roles = "Admin")]
 
         [HttpPost, ActionName("Delete")]

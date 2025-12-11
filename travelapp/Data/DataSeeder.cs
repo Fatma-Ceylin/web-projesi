@@ -10,13 +10,13 @@ namespace travelapp.Data
             UserManager<AppUser> userManager,
             RoleManager<IdentityRole> roleManager)
         {
-            // ADMIN ROLE OLUŞTUR
+    
             if (!roleManager.RoleExistsAsync("Admin").Result)
             {
                 roleManager.CreateAsync(new IdentityRole("Admin")).Wait();
             }
 
-            // ADMIN USER OLUŞTUR
+       
             var adminEmail = "admin@site.com";
             var admin = userManager.FindByEmailAsync(adminEmail).Result;
 
@@ -34,7 +34,6 @@ namespace travelapp.Data
                 userManager.AddToRoleAsync(newAdmin, "Admin").Wait();
             }
 
-            // NORMAL ROLE OLUŞTUR
             if (!roleManager.RoleExistsAsync("User").Result)
             {
                 roleManager.CreateAsync(new IdentityRole("User")).Wait();

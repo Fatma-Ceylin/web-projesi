@@ -1,0 +1,48 @@
+@model travelapp.Models.Place
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+
+<script src="~/js/site.js" asp-append-version="true"></script>
+
+<div class="col-md-6 offset-md-3 mt-4">
+    <div class="card shadow-sm">
+        <div class="card-body text-center">
+
+            <h4>@Model.Name için Feedback Ekle</h4>
+            <hr />
+
+            @if (ViewData["CommentError"] != null)
+            {
+                <div class="alert alert-danger" role="alert">
+                    @ViewData["CommentError"]
+                </div>
+            }
+
+            <form asp-controller="Feedback" asp-action="FeedBack" method="post">
+                @Html.AntiForgeryToken()
+                <input type="hidden" name="placeId" value="@Model.PlaceId" />
+
+                <div class="mb-3">
+                    <label for="Comment" class="form-label">Comment:</label>
+                    <textarea id="Comment" name="comment" class="form-control" style="height: 100px;"></textarea>
+                </div>
+
+          
+                <div class="rating-stars">
+                    <span class="star" data-index="0">&#9733;</span>
+                    <span class="star" data-index="1">&#9733;</span>
+                    <span class="star" data-index="2">&#9733;</span>
+                    <span class="star" data-index="3">&#9733;</span>
+                    <span class="star" data-index="4">&#9733;</span>
+                </div>
+
+
+                <input type="hidden" id="RatingValue" name="Rating" value="0" required>
+
+                <br />
+                <button type="submit" class="btn btn-primary btn-sm mt-3">
+                    Send
+                </button>
+            </form>
+        </div>
+    </div>
+</div>

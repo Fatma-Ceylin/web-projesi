@@ -1,11 +1,10 @@
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using travelapp.Data;
 using travelapp.Models;
 
 namespace travelapp.Controllers
 {
-
-  
     public class CityController : Controller
     {
         private readonly ApplicationDBContext _context;
@@ -15,29 +14,32 @@ namespace travelapp.Controllers
             _context = context;
         }
 
-     
+
         public IActionResult Index()
         {
             var cities = _context.Cities.ToList();
             return View(cities);
         }
 
- 
+    
         public IActionResult Details(int id)
         {
-            var city = _context.Cities.FirstOrDefault(c => c.Id == id);
-            if (city == null) return NotFound();
+            var city = _context.Cities
+                .Include(c => c.Places)
+                .FirstOrDefault(c => c.Id == id);
 
-            return View(city);
+            if (city == null)
+                return NotFound();
+
+            return View(city); 
         }
 
- 
+
         public IActionResult Create()
         {
             return View();
         }
 
-      
         [HttpPost]
         public IActionResult Create(City city)
         {
@@ -59,7 +61,6 @@ namespace travelapp.Controllers
             return View(city);
         }
 
-     
         [HttpPost]
         public IActionResult Edit(City city)
         {
@@ -81,7 +82,6 @@ namespace travelapp.Controllers
             return View(city);
         }
 
-      
         [HttpPost, ActionName("Delete")]
         public IActionResult DeleteConfirmed(int id)
         {

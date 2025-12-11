@@ -18,6 +18,14 @@ public class HomeController : Controller
         return View();
     }
 
+    public IActionResult About()
+    {
+        ViewBag.Title = "About TravelApp";
+        ViewBag.Description = "TravelApp, Ankara, İstanbul, İzmir ve Sakarya şehirlerindeki turları ve etkinlikleri listeleyen basit bir gezi planlama uygulamasıdır.";
+
+        return View();
+    }
+
     public IActionResult Privacy()
     {
         return View();

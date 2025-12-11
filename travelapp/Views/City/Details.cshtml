@@ -1,15 +1,95 @@
-@model travelapp.Models.City
+﻿@model travelapp.Models.City
+@using Microsoft.AspNetCore.Identity @* Rol kontrolü için User.IsInRole() kullanılır *@
 
-<h2>City Details</h2>
+<h2>@Model.name</h2>
 
 <p><strong>Plate Code:</strong> @Model.plateCode</p>
-<p><strong>Name:</strong> @Model.name</p>
-<p><strong>Description:</strong> @Model.Description</p>
+
+@if (!string.IsNullOrEmpty(Model.Description))
+{
+    <p><strong>Description:</strong> @Model.Description</p>
+}
 
 @if (!string.IsNullOrEmpty(Model.ImageUrl))
 {
-    <img src="@Model.ImageUrl" width="300" />
+    <img src="@Model.ImageUrl"
+         width="350"
+         class="mb-4 rounded shadow-sm" />
 }
 
-<br /><br />
-<a class="btn btn-secondary" href="/City">Back</a>
+<hr />
+
+@if (User.IsInRole("Admin"))
+{
+    <a class="btn btn-success mb-3"
+       asp-controller="Place"
+       asp-action="Create"
+       asp-route-cityId="@Model.Id">
+         + Add Place
+    </a>
+}
+
+<h3>Places in @Model.name</h3>
+
+@if (Model.Places == null || !Model.Places.Any())
+{
+    <p>No places added yet.</p>
+}
+else
+{
+    <table class="table table-bordered table-striped mt-3">
+        <thead class="table-light">
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th style="width:240px;">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var p in Model.Places)
+            {
+                <tr>
+
+                    <td>@p.Name</td>
+
+                    <td>@p.Description</td>
+
+                    <td>
+                        <a class="btn btn-info btn-sm mb-1"
+                           asp-controller="Place"
+                           asp-action="Details"
+                           asp-route-id="@p.PlaceId">
+                             Details
+                        </a>
+
+                        <a class="btn btn-secondary btn-sm mb-1"
+                           asp-controller="Feedback"
+                           asp-action="All"
+                           asp-route-placeId="@p.PlaceId">
+                             Feedbacks
+                        </a>
+
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <a class="btn btn-warning btn-sm mb-1"
+                               asp-controller="Place"
+                               asp-action="Edit"
+                               asp-route-id="@p.PlaceId">
+                                 Edit
+                            </a>
+
+                            <a class="btn btn-danger btn-sm mb-1"
+                               asp-controller="Place"
+                               asp-action="Delete"
+                               asp-route-id="@p.PlaceId">
+                                 Delete
+                            </a>
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+<a class="btn btn-secondary mt-3" asp-action="Index">Back</a>

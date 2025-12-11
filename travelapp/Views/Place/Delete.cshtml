@@ -1,0 +1,16 @@
+@model travelapp.Models.Place
+
+<h2>Delete Place: @Model.Name</h2>
+<form asp-controller="Place" asp-action="DeleteConfirmed" method="post">
+    
+    @Html.AntiForgeryToken()
+    
+    <input type="hidden" asp-for="PlaceId" /> 
+    
+    <button type="submit" class="btn btn-danger">Delete</button> |
+    
+    <a asp-controller="City" 
+       asp-action="Details" 
+       asp-route-id="@Model.CityId" 
+       class="btn btn-secondary">Cancel</a>
+</form>

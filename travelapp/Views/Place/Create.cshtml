@@ -1,0 +1,25 @@
+@model travelapp.Models.Place
+
+
+<h2>Add New Place</h2>
+
+<form asp-controller="Place" asp-action="Create" method="post">
+
+    <input type="hidden" asp-for="CityId" />
+
+    <div class="mb-3">
+        <label asp-for="Name"></label>
+        <input class="form-control" asp-for="Name" autocomplete="off" />
+        <span asp-validation-for="Name" class="text-danger"></span> @* Doğrulama Mesajı *@
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Description"></label>
+        <input class="form-control" asp-for="Description" autocomplete="off" />
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+
+
+    <button type="submit" class="btn btn-primary mt-3">Save</button>
+
+</form>

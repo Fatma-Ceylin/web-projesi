@@ -5,7 +5,24 @@ body {
     color: #222;
 }
 
+/* site.css dosyanıza ekleyin */
+.rating-stars {
+    font-size: 30px; /* Yıldız boyutu */
+    color: #ccc;    /* Başlangıçta gri */
+    cursor: pointer;
+    display: inline-block;
+}
 
+/* Tek bir yıldız (span) stili */
+.rating-stars .star {
+    transition: color 0.2s;
+}
+
+/* Seçilmiş veya üzerine gelinmiş yıldızların stili */
+.rating-stars .star.selected,
+.rating-stars .star.hover { 
+    color: gold; 
+}
 
 /* Panorama strip under navbar */
 .site-header .panorama-strip {
@@ -35,7 +52,6 @@ body {
     border-radius: 8px;
     padding: 30px;
     box-shadow: 0 6px 18px rgba(0,0,0,0.06);
-    overflow: hidden;
 }
 .hero-text { opacity: 0; transform: translateX(-20px); transition: all 800ms ease-out; }
 .hero-image-wrap { text-align: center; }

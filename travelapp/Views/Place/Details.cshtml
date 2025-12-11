@@ -1,0 +1,23 @@
+@model travelapp.Models.Place
+
+<h2>@Model.Name Details</h2>
+
+<p><strong>Description:</strong> @Model.Description</p>
+
+<a asp-controller="Feedback" 
+   asp-action="All" 
+   asp-route-placeId="@Model.PlaceId" 
+   class="btn btn-warning">
+     Feedbacks
+</a>
+
+<hr />
+
+<a asp-controller="Place" asp-action="Edit" asp-route-id="@Model.PlaceId" class="btn btn-info">Edit</a> |
+<a asp-controller="City" asp-action="Details" asp-route-id="@Model.CityId" class="btn btn-secondary">Back to City</a>
+
+<h3>User Feedbacks (@(Model.Feedbacks?.Count() ?? 0))</h3>
+@if (Model.Feedbacks != null && Model.Feedbacks.Any())
+{
+    @* Listeleme kodu buraya gelebilir *@
+}
