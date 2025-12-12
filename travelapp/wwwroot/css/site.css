@@ -1,30 +1,29 @@
-/* Basic resets */
 body {
     font-family: "Segoe UI", Roboto, Arial, sans-serif;
     background: #f8f9fa;
     color: #222;
 }
 
-/* site.css dosyanıza ekleyin */
+
 .rating-stars {
-    font-size: 30px; /* Yıldız boyutu */
-    color: #ccc;    /* Başlangıçta gri */
+    font-size: 30px; 
+    color: #ccc;    
     cursor: pointer;
     display: inline-block;
 }
 
-/* Tek bir yıldız (span) stili */
+
 .rating-stars .star {
     transition: color 0.2s;
 }
 
-/* Seçilmiş veya üzerine gelinmiş yıldızların stili */
+
 .rating-stars .star.selected,
 .rating-stars .star.hover { 
     color: gold; 
 }
 
-/* Panorama strip under navbar */
+
 .site-header .panorama-strip {
     background-image: url('/images/istanbul-panorama.jpg');
     background-size: cover;
@@ -46,7 +45,7 @@ body {
     font-weight: 600;
 }
 
-/* HERO section layout */
+
 .hero-section .hero-row {
     background: white;
     border-radius: 8px;
@@ -63,7 +62,7 @@ body {
     transition: transform 900ms ease-out, opacity 900ms ease-out;
 }
 
-/* Feature sections */
+
 .feature-section .feature-row {
     background: white;
     border-radius: 8px;
@@ -80,7 +79,7 @@ body {
 }
 .feature-text { opacity: 0; transform: translateX(20px); transition: all 700ms ease-out; }
 
-/* Reveal classes (JS will add 'visible') */
+
 .reveal-right-onload.visible,
 .reveal-on-scroll-right.visible,
 .reveal-on-scroll-left.visible {
@@ -95,17 +94,17 @@ body {
     transform: translateX(0);
 }
 
-/* Slight delay to show text after image load */
+
 .hero-text.visible { transition-delay: 300ms; }
 
-/* Responsive tweaks */
+
 @media (max-width: 767px) {
     .site-header .panorama-strip { height: 140px; }
     .panorama-title { font-size: 1.2rem; }
     .hero-row, .feature-row { padding: 18px; }
     .hero-image { margin-top: 12px; }
 }
-/* NAVBAR BACKGROUND IMAGE */
+
 .custom-navbar {
     background-image: url('/images/istanbul-banner.jpg');
     background-size: cover;
@@ -117,7 +116,7 @@ body {
     color: white !important;
 }
 
-/* Logo Boyutu */
+
 .nav-logo {
     width: 60px;
     height: 60px;
@@ -125,7 +124,7 @@ body {
     object-fit: cover;
 }
 
-/* Navbar yazıları resmin üzerinde görünür yapılsın */
+
 .navbar-nav .nav-link {
     color: white !important;
     font-weight: 600;
@@ -140,11 +139,11 @@ body {
     text-shadow: 1px 1px 3px #000;
 }
 
-/* margin kaldır */
+
 body {
     padding-top: 0 !important;
 }
-/* NAVBAR BANNER BACKGROUND */
+
 .navbar-banner {
     background-image: url('/img/navbarresmi.jpg');
     background-size: cover;
@@ -155,7 +154,7 @@ body {
     border-bottom: 3px solid rgba(255,255,255,0.4);
 }
 
-/* Navbar text readable */
+
 .navbar-banner .nav-link,
 .navbar-banner .navbar-brand {
     font-weight: 600;
@@ -171,7 +170,7 @@ body {
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
-/* Headings */
+
 .section-title {
     font-size: 34px;
     font-weight: 700;
@@ -179,7 +178,7 @@ body {
     margin-bottom: 15px;
 }
 
-/* Paragraph text */
+
 .section-text {
     font-size: 18px;
     line-height: 1.6;

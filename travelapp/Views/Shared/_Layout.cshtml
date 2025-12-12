@@ -38,40 +38,58 @@
                     </li>
 
                     <li class="nav-item">
-                       <a class="nav-link text-white fs-5" asp-controller="Home" asp-action="About">About</a>
+                        <a class="nav-link text-white fs-5" asp-controller="Home" asp-action="About">About</a>
                     </li>
 
-                    
-@if (User?.Identity != null && User.Identity.IsAuthenticated)
-{
-    var currentUser = await UserManager.GetUserAsync(User);
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Booking" asp-action="MyBookings">
+                                My Bookings
+                            </a>
+                        </li>
+                    }
 
-    <li class="nav-item">
-        <span class="nav-link text-warning">
-            Hello, @(currentUser?.FirstName ?? "User")!
-        </span>
-    </li>
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link text-warning fw-semibold" asp-controller="Booking" asp-action="Index">
+                                Bookings (Admin)
+                            </a>
+                        </li>
+                    }
 
-    <li class="nav-item">
-        <a class="nav-link text-danger" asp-controller="Account" asp-action="Logout">Logout</a>
-    </li>
-}
-else
-{
-    <li class="nav-item">
-        <a class="nav-link text-white" asp-controller="Account" asp-action="Login">Login</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link text-white" asp-controller="Account" asp-action="Register">Register</a>
-    </li>
-}
+
+                    @if (User?.Identity != null && User.Identity.IsAuthenticated)
+                    {
+                        var currentUser = await UserManager.GetUserAsync(User);
+
+                        <li class="nav-item">
+                            <span class="nav-link text-warning">
+                                Hello, @(currentUser?.FirstName ?? "User")!
+                            </span>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-danger" asp-controller="Account" asp-action="Logout">Logout</a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link text-white" asp-controller="Account" asp-action="Login">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" asp-controller="Account" asp-action="Register">Register</a>
+                        </li>
+                    }
 
                 </ul>
             </div>
         </div>
     </nav>
 
-    
+
     <div class="panorama-strip">
         <div class="panorama-overlay container">
             <h1 class="panorama-title">Discover Türkiye — From Istanbul to Antalya</h1>
@@ -88,7 +106,14 @@ else
         <small>&copy; @DateTime.Now.Year Explore Turkey — Discover culture, food & tours.</small>
     </footer>
 
+    <script src="~/lib/jquery/dist/jquery.min.js"></script> 
+    
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    
+    @await RenderSectionAsync("Scripts", required: false)
+
     <script src="~/js/site.js"></script>
+
 </body>
+
 </html>

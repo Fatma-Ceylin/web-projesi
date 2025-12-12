@@ -1,0 +1,20 @@
+@model List<Booking>
+
+<h2>All Bookings (Admin)</h2>
+
+<table class="table">
+    <tr>
+        <th>User</th>
+        <th>Event</th>
+        <th>Date</th>
+    </tr>
+
+@foreach (var b in Model)
+{
+    <tr>
+        <td>@b.User.Email</td>
+        <td>@b.Event.Name</td>
+        <td>@b.BookingDate</td>
+    </tr>
+}
+</table>

@@ -13,8 +13,10 @@ builder.Services.AddIdentity<AppUser, IdentityRole>()
     .AddEntityFrameworkStores<ApplicationDBContext>()
     .AddDefaultTokenProviders();
 
-// MVC
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddScoped<IEmailSender, FakeEmailSender>();
+
 
 var app = builder.Build();
 
@@ -29,10 +31,10 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
-app.UseAuthentication();    // LOGIN için şart
-app.UseAuthorization();     // Role bazlı koruma
+app.UseAuthentication();    
+app.UseAuthorization();     
 
-// ROUTES
+
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}"

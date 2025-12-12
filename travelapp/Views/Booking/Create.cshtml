@@ -1,0 +1,15 @@
+@{
+    ViewData["Title"] = "Book a Tour";
+}
+
+<h2>Book This Tour</h2>
+
+<p>You are booking a tour. We already have your contact information.</p>
+
+<form asp-action="CreateConfirmed" method="post">
+    <input type="hidden" name="eventId" value="@ViewBag.EventId" />
+
+    <button type="submit" class="btn btn-primary">
+        Create Booking
+    </button>
+</form>

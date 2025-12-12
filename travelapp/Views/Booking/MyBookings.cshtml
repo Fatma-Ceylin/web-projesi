@@ -1,0 +1,18 @@
+@model List<Booking>
+
+<h2>My Bookings</h2>
+
+<table class="table">
+    <tr>
+        <th>Event</th>
+        <th>Date</th>
+    </tr>
+
+@foreach (var b in Model)
+{
+    <tr>
+        <td>@b.Event.Name</td>
+        <td>@b.BookingDate.ToShortDateString()</td>
+    </tr>
+}
+</table>
