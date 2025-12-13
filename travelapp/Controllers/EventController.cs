@@ -15,26 +15,21 @@ namespace travelapp.Controllers
         {
             _context = context;
         }
-
-        // =========================
-        // Yardımcı Metot: Şehir Listesini Güvenli Oluşturma
-        // =========================
         private List<SelectListItem> GetCitySelectListItems(int? selectedCityId = null)
         {
-            // ❗ 1. Adım: LINQ ile güvenli List<SelectListItem> oluşturuluyor.
-            // Bu, 'name' alanı NULL olan kayıtları atlayarak NullReferenceException'ı önler.
+     
             var cityListItems = _context.Cities
-                // Sadece adı olan şehirleri dahil et
+         
                 .Where(c => c.name != null) 
                 .Select(c => new SelectListItem
                 {
                     Value = c.Id.ToString(),
-                    Text = c.name, // City modelinize göre küçük harf 'name' kullanıldı
+                    Text = c.name, 
                     Selected = c.Id == selectedCityId 
                 })
                 .ToList();
 
-            // ❗ 2. Adım: Boş seçeneği Listenin başına ekle (zorunluluk için kritik)
+
             cityListItems.Insert(0, new SelectListItem 
             { 
                 Value = "", 
@@ -44,10 +39,7 @@ namespace travelapp.Controllers
             return cityListItems;
         }
 
-        // =========================
-        // LIST EVENTS
-        // =========================
-        public IActionResult Index()
+         public IActionResult Index()
         {
             var events = _context.Events
                 .Include(e => e.City) 
@@ -55,10 +47,6 @@ namespace travelapp.Controllers
 
             return View(events);
         }
-
-        // =========================
-        // EVENT DETAILS
-        // =========================
         public IActionResult Details(int id)
         {
             var evt = _context.Events
@@ -71,9 +59,6 @@ namespace travelapp.Controllers
             return View(evt);
         }
 
-        // =========================
-        // CREATE (GET)
-        // =========================
         [Authorize(Roles = "Admin")]
         public IActionResult Create()
         {
@@ -81,9 +66,6 @@ namespace travelapp.Controllers
             return View();
         }
 
-        // =========================
-        // CREATE (POST)
-        // =========================
         [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -91,23 +73,16 @@ namespace travelapp.Controllers
         {
             if (!ModelState.IsValid)
             {
-                // Hata durumunda dropdown'ı, seçili değeri koruyarak tekrar doldur
                 ViewBag.Cities = GetCitySelectListItems(evt.CityId);
                 return View(evt);
             }
 
-            // Eğer CityId hala null ise (ki modeldeki [Required] bunu engellemeliydi)
-            // bu noktada veritabanına eklemeden önce kontrol edilmelidir. 
-            // Model düzeltildiyse (CityId: int?), bu kısım sorunsuz çalışacaktır.
             _context.Events.Add(evt);
             _context.SaveChanges();
 
             return RedirectToAction(nameof(Index));
         }
 
-        // =========================
-        // EDIT (GET)
-        // =========================
         [Authorize(Roles = "Admin")]
         public IActionResult Edit(int id)
         {
@@ -116,15 +91,11 @@ namespace travelapp.Controllers
             if (evt == null)
                 return NotFound();
 
-            // Seçili şehri belirleyerek listeyi doldur
             ViewBag.Cities = GetCitySelectListItems(evt.CityId);
 
             return View(evt);
         }
 
-        // =========================
-        // EDIT (POST)
-        // =========================
         [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -132,7 +103,6 @@ namespace travelapp.Controllers
         {
             if (!ModelState.IsValid)
             {
-                // Hata durumunda dropdown'ı, seçili değeri koruyarak tekrar doldur
                 ViewBag.Cities = GetCitySelectListItems(evt.CityId);
                 return View(evt);
             }
@@ -143,9 +113,6 @@ namespace travelapp.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        // =========================
-        // DELETE (GET)
-        // =========================
         [Authorize(Roles = "Admin")]
         public IActionResult Delete(int id)
         {
@@ -158,10 +125,7 @@ namespace travelapp.Controllers
 
             return View(evt);
         }
-
-        // =========================
-        // DELETE (POST)
-        // =========================
+        
         [Authorize(Roles = "Admin")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]

@@ -17,7 +17,7 @@ namespace travelapp.Controllers
         public IActionResult All(int placeId)
         {
             var place = _context.Places
-                .Include(p => p.Feedbacks) // Geri bildirimleri yükle
+                .Include(p => p.Feedbacks)
                 .FirstOrDefault(p => p.PlaceId == placeId);
 
             if (place == null) return NotFound();
@@ -41,7 +41,7 @@ namespace travelapp.Controllers
 
 
         [HttpPost]
-        [ValidateAntiForgeryToken] // Güvenlik kontrolü
+        [ValidateAntiForgeryToken] 
         public IActionResult FeedBack(int placeId, string comment, int rating)
         {
          
