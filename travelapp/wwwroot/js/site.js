@@ -42,12 +42,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-
+//rating with stars
 $(document).ready(function() {
     const $stars = $('.rating-stars .star');
     const $ratingInput = $('#RatingValue');
 
-    // Hover Efekti
+
     $stars.on('mouseenter', function() {
         const index = $(this).data('index'); 
         $stars.removeClass('hover');

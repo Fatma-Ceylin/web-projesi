@@ -1,7 +1,7 @@
 // File: Models/Feedback.cs
 using System;
 using System.ComponentModel.DataAnnotations;
-
+//model with some validation rules
 namespace travelapp.Models
 {
     public class Feedback

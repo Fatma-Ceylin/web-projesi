@@ -1,8 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
 using travelapp.Data;
 using travelapp.Models;
-
+//same logic with other parts.details part everbody is authorized. other crud operations are just done by admin. other words, only admin is authorized
 namespace travelapp.Controllers
 {
     public class PlaceController : Controller
@@ -14,6 +15,7 @@ namespace travelapp.Controllers
             _context = context;
         }
 
+        [Authorize(Roles = "Admin")]
         public IActionResult Create(int cityId)
         {
             var place = new Place { CityId = cityId };
@@ -40,6 +42,7 @@ namespace travelapp.Controllers
             _context.SaveChanges();
             return RedirectToAction("Details", "City", new { id = model.CityId });
         }
+        [Authorize(Roles = "Admin")]
         public IActionResult Edit(int id)
         {
             var place = _context.Places.FirstOrDefault(p => p.PlaceId == id);
@@ -60,6 +63,7 @@ namespace travelapp.Controllers
             }
             return View(model);
         }
+        [Authorize(Roles = "Admin")]
         public IActionResult Delete(int id)
         {
             var place = _context.Places.FirstOrDefault(p => p.PlaceId == id);
@@ -68,14 +72,14 @@ namespace travelapp.Controllers
             return View(place);
         }
 
-
-        [HttpPost] 
-        [ValidateAntiForgeryToken] 
+        [Authorize(Roles = "Admin")]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
         public IActionResult DeleteConfirmed(int id)
         {
             var place = _context.Places.FirstOrDefault(p => p.PlaceId == id);
 
-        
+
             if (place == null)
                 return NotFound();
 
@@ -86,7 +90,7 @@ namespace travelapp.Controllers
             return RedirectToAction("Details", "City", new { id = cityId });
         }
 
-           public IActionResult Details(int id)
+        public IActionResult Details(int id)
         {
             var place = _context.Places
                 .Include(p => p.Feedbacks)

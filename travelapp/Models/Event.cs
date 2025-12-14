@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
-
+//model with some validation rules
 namespace travelapp.Models
 {
     public class Event

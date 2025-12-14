@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using travelapp.Models;
 
 namespace travelapp.Controllers;
-
+//visible to everbody and restricitions done in other parts take part in home also. 
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;

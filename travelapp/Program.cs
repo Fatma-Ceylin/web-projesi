@@ -9,9 +9,17 @@ builder.Services.AddDbContext<ApplicationDBContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 
+//that part lets us do async operations, i mean clean operaitons on the website by using async
 builder.Services.AddIdentity<AppUser, IdentityRole>()
     .AddEntityFrameworkStores<ApplicationDBContext>()
     .AddDefaultTokenProviders();
+
+builder.Services.ConfigureApplicationCookie(options =>
+{
+    options.LoginPath = "/Account/Login";
+    options.AccessDeniedPath = "/Account/AccessDenied";
+});
+
 
 builder.Services.AddControllersWithViews();
 
@@ -40,7 +48,7 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}"
 );
 
-using (var scope = app.Services.CreateScope())
+using (var scope = app.Services.CreateScope()) 
 {
     var services = scope.ServiceProvider;
 

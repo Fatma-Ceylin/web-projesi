@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using travelapp.Models;
-
+//model with some validation rules
 public class Booking
 {
     [Key]

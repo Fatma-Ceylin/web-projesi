@@ -3,15 +3,17 @@ using travelapp.Models;
 
 namespace travelapp.Data
 {
+    //when the program is first run database is created,admin is created, roles created 
+    //when we had some trouble about models , we deleted database and did the arrangements . then ran the program again
     public static class DataSeeder
     {
         public static void Seed(
-            ApplicationDBContext context,
-            UserManager<AppUser> userManager,
-            RoleManager<IdentityRole> roleManager)
+            ApplicationDBContext context, //our db
+            UserManager<AppUser> userManager,//user transactions
+            RoleManager<IdentityRole> roleManager) //transactions
         {
 
-            if (!roleManager.RoleExistsAsync("Admin").Result)
+            if (!roleManager.RoleExistsAsync("Admin").Result)//if admin doesnt exist , create it
             {
                 roleManager.CreateAsync(new IdentityRole("Admin")).Wait();
             }
@@ -34,14 +36,14 @@ namespace travelapp.Data
                 userManager.AddToRoleAsync(newAdmin, "Admin").Wait();
             }
 
-            if (!roleManager.RoleExistsAsync("User").Result)
+            if (!roleManager.RoleExistsAsync("User").Result)//if a user doesnt exist ,create it
             {
                 roleManager.CreateAsync(new IdentityRole("User")).Wait();
             }
 
             context.SaveChanges();
 
-            if (!context.Cities.Any())
+            if (!context.Cities.Any())//for the begining these cities are added but later cities can be added on website
             {
                 context.Cities.AddRange(
                     new City

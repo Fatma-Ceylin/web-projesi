@@ -2,8 +2,10 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using travelapp.Data;
 using travelapp.Models;
-
 namespace travelapp.Controllers
+
+//for each place in cities there is feedbacks. all users can see all feedbacks about that feedback.
+//all users can do feedback adding operaiton but users name are Anonymous
 {
     public class FeedbackController : Controller
     {
@@ -16,6 +18,7 @@ namespace travelapp.Controllers
 
         public IActionResult All(int placeId)
         {
+            //fecthing all feedbacks from one place
             var place = _context.Places
                 .Include(p => p.Feedbacks)
                 .FirstOrDefault(p => p.PlaceId == placeId);

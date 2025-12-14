@@ -1,5 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
-
+//model with some validation rules
 namespace travelapp.Models
 {
     public class Place
